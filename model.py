@@ -5,7 +5,8 @@ import os
 # SQLITE_FILE = ':memory:'
 SQLITE_FILE = 'LOCALHOST.sqlite'
 
-db = sqla_wrapper.SQLAlchemy(os.getenv("DATABASE_URL", f"sqlite:///{SQLITE_FILE}"))
+# db = sqla_wrapper.SQLAlchemy(os.getenv("DATABASE_URL", f"sqlite:///{SQLITE_FILE}"))
+db = sqla_wrapper.SQLAlchemy("postgres://azwjhwhjyjkkli:bc0dda017d91dcf67793ac5c4cc7f23ba511e3555b684fb6dc786ffc482f6569@ec2-54-217-243-19.eu-west-1.compute.amazonaws.com:5432/d6km9nn8q8c19r")
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -185,7 +185,7 @@ def account_delete(account_id):
         db.commit()
         return flask.redirect(flask.url_for('accounts'))
 
-@app.route("/accounts/<account_id>/edit")
+@app.route("/accounts/<account_id>/edit", methods=["GET", "POST"])
 def account_edit(account_id):
     user_to_edit = db.query(model.User).get(account_id)
 
